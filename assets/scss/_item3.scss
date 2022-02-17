@@ -1,0 +1,138 @@
+@import "colorPallet";
+@import 'variables';
+@import "mixin";
+.container-item3 {
+  background-color:map-get($color-pallet,'black1');
+  width: 70%;
+  height: 250px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+  bottom: 100px;
+  text-align: center;
+  .col {
+    display: flex;
+    margin: 0 auto;
+    flex-basis: 30%;
+    align-items: center;
+    position: relative;
+    justify-content: space-around;
+    label {
+      color:map-get($color-pallet,'wwhite');
+      font-size:$font-size-12;
+      font-weight: 200;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+      margin-top: 10px;
+      text-transform: uppercase;
+      text-align: center;
+      padding: 5%;
+    }
+    input {
+      padding: 28px 10px;
+      font-size: $font-size-20;
+      font-weight: 200;
+      box-shadow: none;
+      line-height: $line-height-base;
+      width: 100%;
+      text-align: center;
+      background-color: #1f1f2c;
+      border: 1px solid #1f1f2c !important;
+      color:map-get($color-pallet,'wwhite');
+      &::placeholder {
+        color:map-get($color-pallet,'wwhite') !important;
+      }
+    }
+  }
+  .requestBtn {
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    bottom: 20px;
+    text-align: center;
+    align-items: center;
+    button {
+      height: 50px;
+      padding: 12px 32px;
+      font-size: $font-size-13;
+      border-radius: 0;
+      border: 1px #6fb586 solid;
+      color: #6fb586 ;
+      text-transform: uppercase;
+      font-weight: 400;
+      transition-duration: 0.3s;
+      @include before-sweeping(transparent);
+      padding: 0.5rem;
+      display: inline-block;
+      vertical-align: middle;
+      &:before {
+        content: "";
+      @include sweeping(#6fb586);
+      }
+      &:hover,
+      &:focus,
+      &:active {
+        color:map-get($color-pallet,'wwhite') ;
+      }
+      &:hover:before,
+      &:focus:before,
+      &:active:before {
+        -webkit-transform: scaleY(1);
+        transform: scaleY(1);
+      }
+    }
+  }
+}
+
+.modal {
+  display: none;
+  top: 0;
+  min-width: 250px;
+  width: 80%;
+  height: 80vh;
+  margin: 0 auto;
+  position: fixed;
+  z-index: 40001;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px #000;
+  margin-top: 30px;
+  margin-left: 10%;
+
+  animation-name: fadeIn_Modal;
+  animation-duration: 0.8s;
+}
+
+.headerr {
+  width: 100%;
+  height: 70px;
+  border-radius: 10px 10px 0px 0px;
+  border-bottom: 2px solid #ccc;
+}
+
+.headerr a {
+  text-decoration: none;
+  float: right;
+  line-height: 70px;
+  margin-right: 20px;
+  color: #aaa;
+}
+
+.contents {
+  width: 100%;
+  height: 250px;
+}
+.contents table {
+  width: 100%;
+}
+.contents table,
+th,
+td {
+  border: 1px solid;
+}
+.contents th,
+td {
+  padding: 15px;
+  text-align: center;
+}
+

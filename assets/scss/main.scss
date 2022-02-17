@@ -1,0 +1,27 @@
+@import 'reset';
+@import 'colorPallet';
+@import 'variables';
+@import 'mixin';
+@import 'navbar';
+@import 'carousel';
+@import 'item3';
+@import 'welcome';
+@import 'secondCarousel';
+@import 'testmentional';
+@import 'footer';
+* {box-sizing:border-box}
+body {
+    margin:0;
+    background-color: $body-bg;
+    color: $body-color;
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    position: relative;
+    
+  }
+@font-face {
+    font-family: $font-family-base;
+    src: url("../fonts/Playfair_Display/PlayfairDisplay-Regular.ttf");
+    font-weight: normal;
+    }
+ 

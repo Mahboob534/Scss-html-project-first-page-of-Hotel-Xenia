@@ -1,0 +1,23 @@
+@import 'colorPallet';
+
+$font-family-base:"Playfair";
+$font-size-base:16px;
+$font-weight-base:900;
+$line-height-base:1.5;
+$body-color:map-get($color-pallet,'muted');
+$body-bg:map-get($color-pallet,'light');
+$dt-font-weight:400;
+$link-color:map-get($color-pallet,'success');
+$link-hover-color:map-get($color-pallet,'light');
+$link-decoration:none;
+$link-hover-color:map-get($color-pallet,'light');
+$link-hover-decoration: none;
+$table-bg:$body-bg;
+$table-cell-padding:7px;
+$text-muted:map-get($color-pallet,'muted');
+$cursor-disabled:'disabled';
+$font-size-22:22px;
+$font-size-30:30px;
+$font-size-13:13px;
+$font-size-20:20px;
+$font-size-12:12px;

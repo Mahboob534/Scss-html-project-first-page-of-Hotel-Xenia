@@ -1,0 +1,63 @@
+@import 'colorPallet';
+@import 'variables';
+.footer {
+    background-color:map-get($color-pallet,'black1');
+    color:map-get($color-pallet,'wwhite') ;
+    width: 100%;
+    overflow: hidden;
+    
+  }
+  .footerFirstPart {
+    margin:5% auto;  
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    .contact{
+      display:flex; 
+      flex-direction:row;
+    }
+    img{
+      width: 120px;
+      height: 64px;
+    }
+    
+    i::before {
+      border-radius: 50%;
+      width: 35px;
+      height: 35px;
+      text-align: center;
+      line-height: 36px;
+    }
+    
+  }
+ 
+  .footerSecondPart{
+    background-color: #171720; 
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    .part-left{
+      margin:10px auto;
+      margin-left: 0; 
+    }
+    .part-center{
+      text-align:center; 
+      margin:10px auto;
+    }
+    .part-right{
+      text-align: right;
+      margin-right: 0;
+      ul{
+        display:flex;
+        flex-basis:50%;
+       
+      }
+      li{
+        margin: 10px 5px;
+      } 
+    } 
+  }
+  
+  
+  

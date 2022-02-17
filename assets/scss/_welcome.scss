@@ -1,0 +1,206 @@
+.watermark {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    bottom: 80px;
+    .background {
+        position: absolute;
+        z-index: 0;
+        display: block;
+        #bg-text {
+            margin-left: 20%;
+            text-align: center;
+            opacity: 0.1;
+            font-size: 170px;
+            font-weight: 400;
+        }
+    }
+    .content {
+        margin-left: 28%;
+        padding: 5%;
+        position: absolute;
+        z-index: 1;
+        h2 {
+            width: 100%;
+            font-size: 30px;
+            margin: 5% 30%;
+            font-weight: 800;
+        }
+    }
+}
+
+.svgClass {
+    text-align: center;
+}
+.wpb_text_column {
+    text-align: center;
+    width: 60%;
+    margin: 0 20%;
+    .wpb_wrapper {
+        h4 {
+            font-weight: 500;
+        }
+        p {
+            opacity: 0.5;
+            font-size: 16px;
+        }
+    }
+}
+
+.picAndText {
+    margin: 2%;
+    text-align: center;
+    .single-Image {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+    }
+    .picAndText p {
+        opacity: 0.5;
+    }
+}
+// three picture
+.threepic {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 2%;
+    cursor: pointer;
+}
+.hoverbox {
+    margin: 1%;
+    a {
+        text-decoration: none;
+        color: #ffffff;
+        display: block;
+        bottom: 0;
+    }
+    .hoverbox-tran {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        animation: fadeInDown 0.4s;
+        visibility: hidden;
+    }
+    .hoverbox_icon {
+        position: absolute;
+        top: 20px;
+        left: 10px;
+        padding: 0 30px;
+        animation: fadeInDown 0.4s;
+        width: 180px !important;
+    }
+    .hoverbox_title {
+        position: absolute;
+        bottom: 20px;
+        left: 10px;
+        padding: 0 30px;
+        animation: fadeInDown 0.4s;
+    }
+    .hoverbox_title h2 {
+        font-weight: 700;
+        font-size: 30px;
+    }
+    .hoverbox_paragraph {
+        position: absolute;
+        bottom: 20px;
+        left: 10px;
+        right: 10px;
+        padding: 0 30px;
+        visibility: hidden;
+    }
+    &:hover .hoverbox_tran {
+        visibility: visible;
+        -webkit-animation: fadeInUp 0.2s;
+        animation: fadeInUp 0.2s;
+    }
+    &:hover.stretchy_wrapper {
+        bottom: 0;
+    }
+    &:hover .transparent_film:before {
+        display: block;
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        background-color: #000;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+    &:hover .hoverbox_title {
+        visibility: hidden;
+        -webkit-animation: fadeInUp 0.4s;
+        animation: fadeInUp 0.4s;
+    }
+
+    &:hover .hoverbox_paragraph {
+        visibility: visible;
+        -webkit-animation: fadeInUp 0.4s;
+        animation: fadeInUp 0.4s;
+    }
+}
+.stretchy_wrapper {
+    width: 100% !important;
+    padding-bottom: 56.25% !important;
+    position: relative !important;
+    height: 0px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: block;
+}
+
+.stretchy_wrapper > * {
+    display: block;
+    position: absolute !important;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.transparent_film {
+    background-color: transparent !important;
+}
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, -100%, 0);
+    }
+    100% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, 100%, 0);
+    }
+    100% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+.classOff {
+    margin:0;
+    background-image: url("/assets/pic/home-banner-1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 350px;
+    .classOff-content {
+        text-align: center;
+        h2 {
+            padding-top:7%;
+            font-size:30px;
+             font-weight:600;
+        }
+    }
+}

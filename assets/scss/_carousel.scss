@@ -1,0 +1,124 @@
+@import 'mixin';
+@import 'colorPallet';
+@import 'variables';
+.item-1 {
+  background-image: url("/assets/pic/111.jpg");
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: 50% 40%;
+}
+.item-2 {
+  background-image: url("/assets/pic/slide_n_2_o.jpg");
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: 50% 40%;
+}
+.item-3 {
+  background-image: url("/assets/pic/slider_n_1.jpg");
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: 50% 40%;
+}
+.owl-carousel .owl-nav.disabled {
+  display: block !important;
+}
+.prev-slide {
+  position: absolute;
+  left: 0px !important;
+  top: 45% !important;
+  color: map-get($color-pallet,'wwhite');
+  background-color: rgba(0, 0, 0, 0.7);
+  font-size: $font-size-22;
+  font-weight:$font-weight-base;
+  width: 55px;
+  height: 50px;
+  clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 4px;
+  padding-right: 5px;
+}
+
+.next-slide {
+  position: absolute;
+  padding-bottom: 5px;
+  padding-right: 5px;
+  top: 45% !important;
+  right: 0 !important;
+  color: map-get($color-pallet,'wwhite');
+  background-color: rgba(0, 0, 0, 0.7);
+  font-weight:$font-weight-base;
+  width: 55px;
+  height: 50px;
+  // padding: 15px;
+  font-size:$font-size-22;
+  clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+  transform: rotate(180deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.item-caption {
+  position: absolute;
+  top: 40%;
+  left: 35%;
+  font-size: $font-size-30;
+  color:map-get($color-pallet,'wwhite') !important;
+  line-height: $line-height-base;
+  text-align: center;
+  letter-spacing: 2px;
+  h3 {
+    user-select: none;
+  }
+  button {
+    background: transparent;
+    padding: 12px 30px;
+    border: 1px solid #fff;
+    color:map-get($color-pallet,'wwhite');
+    cursor: pointer;
+      @include before-sweeping(transparent);
+      padding: 0.5rem;
+      display: inline-block;
+      vertical-align: middle;
+      &:before {
+        content: "";
+        @include sweeping(white);
+      }
+      &:hover,
+      &:focus,
+      &:active {
+        color: black;
+      }
+      &:hover:before,
+      &:focus:before,
+      &:active:before {
+        -webkit-transform: scaleY(1);
+        transform: scaleY(1);
+      }
+    }
+  }
+
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.fadeInUp {
+  animation-name: fadeInUp;
+}

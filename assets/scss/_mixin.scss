@@ -1,0 +1,26 @@
+@mixin before-sweeping($color) {
+  background-color: $color;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  backface-visibility: hidden;
+   position: relative;
+  transition-property: color;
+  transition-duration: 0.4s;
+}
+@mixin sweeping($bg-color) {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: $bg-color;
+  -webkit-transform: scaleY(0);
+  transform: scaleY(0);
+  -webkit-transform-origin: 50% 100%;
+  transform-origin: 50% 100%;
+  transition-property: transform;
+    transition: ease-out 0.4s;
+  // transition-timing-function: ;
+}
