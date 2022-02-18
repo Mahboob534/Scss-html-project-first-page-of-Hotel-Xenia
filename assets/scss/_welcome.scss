@@ -68,6 +68,7 @@
 }
 .hoverbox {
     margin: 1%;
+    overflow: hidden;
     a {
         text-decoration: none;
         color: #ffffff;
@@ -82,7 +83,7 @@
         left: 0px;
         right: 0px;
         animation: fadeInDown 0.4s;
-        visibility: hidden;
+        visibility: hidden;      
     }
     .hoverbox_icon {
         position: absolute;
@@ -98,6 +99,7 @@
         left: 10px;
         padding: 0 30px;
         animation: fadeInDown 0.4s;
+        
     }
     .hoverbox_title h2 {
         font-weight: 700;
@@ -110,14 +112,15 @@
         right: 10px;
         padding: 0 30px;
         visibility: hidden;
+       
     }
     &:hover .hoverbox_tran {
         visibility: visible;
-        -webkit-animation: fadeInUp 0.2s;
-        animation: fadeInUp 0.2s;
+        animation: fadeInUp 0.1s;
     }
     &:hover.stretchy_wrapper {
         bottom: 0;
+        
     }
     &:hover .transparent_film:before {
         display: block;
@@ -133,19 +136,17 @@
     }
     &:hover .hoverbox_title {
         visibility: hidden;
-        -webkit-animation: fadeInUp 0.4s;
         animation: fadeInUp 0.4s;
     }
 
     &:hover .hoverbox_paragraph {
         visibility: visible;
-        -webkit-animation: fadeInUp 0.4s;
         animation: fadeInUp 0.4s;
     }
 }
 .stretchy_wrapper {
     width: 100% !important;
-    padding-bottom: 56.25% !important;
+    padding-bottom: 56.25% ;
     position: relative !important;
     height: 0px;
     background-position: center center;

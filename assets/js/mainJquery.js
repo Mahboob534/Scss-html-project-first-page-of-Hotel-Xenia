@@ -11,8 +11,6 @@ $(document).ready(function () {
       openMenu()
     }
 
-
-
     function openMenu() {
       $('.three').addClass("active");
       $('.drawer-menu').animate(
@@ -129,7 +127,8 @@ $(document).ready(function () {
   $(".request").click(function () {
 
     let checkInDate = new Date($("#checkInDate").val()).getTime();
-    let checkOutDate = new Date($("#checkOutDate").val()).getTime();
+    let checkOutDate = new Date($("#checkOutDate").val()).    getTime();
+    let numberOfBed=$("#NumberOfBed").val()
     if (checkInDate && checkOutDate) {
       $.ajax({
         url: "./assets/json/date.json",
@@ -138,35 +137,35 @@ $(document).ready(function () {
           result.map((date) => {
             let fromTimeStam = new Date(date.from).getTime();
             let toTimeStam = new Date(date.to).getTime();
-            if (checkInDate >= fromTimeStam && checkOutDate <= toTimeStam) {
+            
+            if (checkInDate >= fromTimeStam && checkOutDate <= toTimeStam && numberOfBed == date.bed) {
               //console.log(date.room);
+              add()
+              $("#tbody tr:last").css({ backgroundColor: "green" });
+            } else {
+              add()
+            }
+            function add() {
               $("#b").css("display", "block");
               $("#tbody").append(`<tr>
-                            <td>${date.from}</td>
-                            <td>${date.to}</td>
-                            <td>${date.room}</td>
-                            <td>${date.bed}</td>
-                          </tr>`);
-              $("#tbody tr:last").css({ backgroundColor: "yellow" });
-            } else {
-              $("#tbody").append(`<tr>
-                <td>${date.from}</td>
-                <td>${date.to}</td>
-                <td>${date.room}</td>
-                <td>${date.bed}</td>
-              </tr>`);
+            <td>${date.from}</td>
+            <td>${date.to}</td>
+            <td>${date.room}</td>
+            <td>${date.bed}</td>
+          </tr>`);
             }
           });
         },
       });
     }
+    
   });
 
   $(".cancel").click(function () {
     $("#b").fadeOut();
     $("#tbody").empty();
   });
-
+  
 
 
   let currentSlide = 0,
