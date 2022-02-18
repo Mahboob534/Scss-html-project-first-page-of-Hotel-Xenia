@@ -51,7 +51,7 @@ table {
 .navbar {
   font-size: 13px;
   position: absolute;
-  z-index: 10;
+  z-index: 100;
   width: 100vw;
   height: 15vh;
   display: -webkit-box;
@@ -107,10 +107,9 @@ table {
 .navbar .book-now-botton {
   color: #fff;
   border: 1px solid #c7c732;
-  width: 200px;
   background-color: #c7c732;
   -webkit-transform: translateZ(0);
-  transform: translateZ(0);
+          transform: translateZ(0);
   -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);
           box-shadow: 0 0 1px rgba(0, 0, 0, 0);
   -webkit-backface-visibility: hidden;
@@ -135,9 +134,9 @@ table {
   bottom: 0;
   background: white;
   -webkit-transform: scaleY(0);
-  transform: scaleY(0);
+          transform: scaleY(0);
   -webkit-transform-origin: 50% 100%;
-  transform-origin: 50% 100%;
+          transform-origin: 50% 100%;
   -webkit-transition-property: -webkit-transform;
   transition-property: -webkit-transform;
   transition-property: transform;
@@ -152,7 +151,7 @@ table {
 
 .navbar .book-now-botton:hover:before, .navbar .book-now-botton:focus:before, .navbar .book-now-botton:active:before {
   -webkit-transform: scaleY(1);
-  transform: scaleY(1);
+          transform: scaleY(1);
 }
 
 .navbar .three {
@@ -174,10 +173,15 @@ table {
 
 .navbar .col:first-of-type {
   margin-left: 5rem;
+  right: 1%;
 }
 
 .navbar .hamburger {
   margin-left: 1rem;
+}
+
+.navbar .hamburger:hover {
+  cursor: pointer;
 }
 
 .navbar .line {
@@ -190,10 +194,6 @@ table {
   transition: 0.5s;
   -webkit-transform-origin: left;
           transform-origin: left;
-}
-
-.navbar .hamburger:hover {
-  cursor: pointer;
 }
 
 .navbar hamburger .line {
@@ -224,7 +224,7 @@ table {
   position: fixed;
   right: 0;
   background-color: #111;
-  z-index: 5;
+  z-index: 10;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -274,7 +274,7 @@ table {
   cursor: pointer;
 }
 
-.linkTransition::after {
+.linkTransition:after {
   content: "";
   display: block;
   width: 0;
@@ -285,11 +285,11 @@ table {
   transition: width 0.3s;
 }
 
-.linkTransition:hover::after {
+.linkTransition:hover:after {
   width: 100%;
 }
 
-.item-1 {
+.slide1 {
   background-image: url("/assets/pic/111.jpg");
   width: 100vw;
   height: 100vh;
@@ -297,7 +297,7 @@ table {
   background-position: 50% 40%;
 }
 
-.item-2 {
+.slide2 {
   background-image: url("/assets/pic/slide_n_2_o.jpg");
   width: 100vw;
   height: 100vh;
@@ -305,7 +305,7 @@ table {
   background-position: 50% 40%;
 }
 
-.item-3 {
+.slide3 {
   background-image: url("/assets/pic/slider_n_1.jpg");
   width: 100vw;
   height: 100vh;
@@ -319,7 +319,6 @@ table {
 
 .prev-slide {
   position: absolute;
-  left: 0px !important;
   top: 45% !important;
   color: #fff;
   background-color: rgba(0, 0, 0, 0.7);
@@ -340,24 +339,20 @@ table {
           align-items: center;
   padding-bottom: 4px;
   padding-right: 5px;
+  left: 0 !important;
 }
 
 .next-slide {
   position: absolute;
-  padding-bottom: 5px;
-  padding-right: 5px;
   top: 45% !important;
-  right: 0 !important;
   color: #fff;
   background-color: rgba(0, 0, 0, 0.7);
+  font-size: 22px;
   font-weight: 900;
   width: 55px;
   height: 50px;
-  font-size: 22px;
   -webkit-clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
           clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -367,6 +362,11 @@ table {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding-bottom: 4px;
+  padding-right: 5px;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  right: 0 !important;
 }
 
 .item-caption {
@@ -387,6 +387,11 @@ table {
           user-select: none;
 }
 
+.item-caption h3 .fadeInUp {
+  -webkit-animation-name: fadeInUp;
+          animation-name: fadeInUp;
+}
+
 .item-caption button {
   background: transparent;
   padding: 12px 30px;
@@ -395,7 +400,7 @@ table {
   cursor: pointer;
   background-color: transparent;
   -webkit-transform: translateZ(0);
-  transform: translateZ(0);
+          transform: translateZ(0);
   -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);
           box-shadow: 0 0 1px rgba(0, 0, 0, 0);
   -webkit-backface-visibility: hidden;
@@ -420,9 +425,9 @@ table {
   bottom: 0;
   background: white;
   -webkit-transform: scaleY(0);
-  transform: scaleY(0);
+          transform: scaleY(0);
   -webkit-transform-origin: 50% 100%;
-  transform-origin: 50% 100%;
+          transform-origin: 50% 100%;
   -webkit-transition-property: -webkit-transform;
   transition-property: -webkit-transform;
   transition-property: transform;
@@ -437,7 +442,7 @@ table {
 
 .item-caption button:hover:before, .item-caption button:focus:before, .item-caption button:active:before {
   -webkit-transform: scaleY(1);
-  transform: scaleY(1);
+          transform: scaleY(1);
 }
 
 .animated {
@@ -473,18 +478,13 @@ table {
   }
 }
 
-.fadeInUp {
-  -webkit-animation-name: fadeInUp;
-          animation-name: fadeInUp;
-}
-
 .container-item3 {
   background-color: #15151E;
   width: 70%;
   height: 250px;
   margin: 0 auto;
   position: relative;
-  z-index: 10;
+  z-index: 5;
   bottom: 100px;
   text-align: center;
 }
@@ -570,7 +570,7 @@ table {
           transition-duration: 0.3s;
   background-color: transparent;
   -webkit-transform: translateZ(0);
-  transform: translateZ(0);
+          transform: translateZ(0);
   -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);
           box-shadow: 0 0 1px rgba(0, 0, 0, 0);
   -webkit-backface-visibility: hidden;
@@ -595,9 +595,9 @@ table {
   bottom: 0;
   background: #6fb586;
   -webkit-transform: scaleY(0);
-  transform: scaleY(0);
+          transform: scaleY(0);
   -webkit-transform-origin: 50% 100%;
-  transform-origin: 50% 100%;
+          transform-origin: 50% 100%;
   -webkit-transition-property: -webkit-transform;
   transition-property: -webkit-transform;
   transition-property: transform;
@@ -612,7 +612,7 @@ table {
 
 .container-item3 .requestBtn button:hover:before, .container-item3 .requestBtn button:focus:before, .container-item3 .requestBtn button:active:before {
   -webkit-transform: scaleY(1);
-  transform: scaleY(1);
+          transform: scaleY(1);
 }
 
 .modal {

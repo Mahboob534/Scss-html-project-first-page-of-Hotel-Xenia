@@ -1,14 +1,16 @@
-@mixin before-sweeping($color) {
+@import 'colorPallet';
+@import 'variables';
+
+@mixin beforeChange($color) {
   background-color: $color;
-  -webkit-transform: translateZ(0);
   transform: translateZ(0);
   box-shadow: 0 0 1px rgba(0, 0, 0, 0);
   backface-visibility: hidden;
-   position: relative;
+  position: relative;
   transition-property: color;
   transition-duration: 0.4s;
 }
-@mixin sweeping($bg-color) {
+@mixin change($bg-color) {
   position: absolute;
   z-index: -1;
   top: 0;
@@ -16,11 +18,32 @@
   right: 0;
   bottom: 0;
   background: $bg-color;
-  -webkit-transform: scaleY(0);
   transform: scaleY(0);
-  -webkit-transform-origin: 50% 100%;
   transform-origin: 50% 100%;
   transition-property: transform;
     transition: ease-out 0.4s;
-  // transition-timing-function: ;
+  // transition-timing-function:ease-out ;
+}
+
+@mixin items(){
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: 50% 40%;
+}
+@mixin nextprevSlide(){
+  position: absolute;
+  top: 45% !important;
+  color:map-get($color-pallet,'wwhite');
+  background-color: rgba(0, 0, 0, 0.7);
+  font-size: $font-size-22;
+  font-weight:$font-weight-base;
+  width: 55px;
+  height: 50px;
+  clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 4px;
+  padding-right: 5px;
 }

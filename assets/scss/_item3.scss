@@ -7,7 +7,7 @@
   height: 250px;
   margin: 0 auto;
   position: relative;
-  z-index: 10;
+  z-index: 5;
   bottom: 100px;
   text-align: center;
   .col {
@@ -61,13 +61,13 @@
       text-transform: uppercase;
       font-weight: 400;
       transition-duration: 0.3s;
-      @include before-sweeping(transparent);
+      @include beforeChange(transparent);
       padding: 0.5rem;
       display: inline-block;
       vertical-align: middle;
       &:before {
         content: "";
-      @include sweeping(#6fb586);
+      @include change(#6fb586);
       }
       &:hover,
       &:focus,
@@ -77,8 +77,7 @@
       &:hover:before,
       &:focus:before,
       &:active:before {
-        -webkit-transform: scaleY(1);
-        transform: scaleY(1);
+          transform: scaleY(1);
       }
     }
   }
